@@ -1,8 +1,14 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import MouseMapsEvents from './core/events/mouse-maps';
+import busKeyMaps from './core/events/key-maps';
+
+React.busMouseMaps = MouseMapsEvents();
+React.busKeyMaps = busKeyMaps();
 
 ReactDOM.render(
   <React.StrictMode>

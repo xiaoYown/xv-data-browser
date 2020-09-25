@@ -53,35 +53,38 @@ const chartData = {
   }
 };
 
-function Coat (props) {
-  console.log(props)
-  useEffect(() => {
-    let chart = new Column('c1', chartData);
-    chart.render();
-
-    return function cleanup () {
-      chart.destroy();
-    }
-  });
-
-  return (
-    <div className="wrapper">
-      <div className="cell">
-        <div
-          className="inner"
-          style={{
-            width: `${600}px`,
-            height: `${400}px`,
-          }}
-        >
+class Coat extends React.Component {
+  componentDidMount () {
+    this.chart = new Column('c1', chartData);
+    this.chart.render();
+  }
+  shouldComponentUpdate () {
+    // TODO: 此处做 chart 视图更新
+    return false
+  }
+  componentWillUnmount () {
+    this.chart.destroy();
+  }
+  render () {
+    return (
+      <div className="wrapper">
+        <div className="cell">
           <div
-            id="c1"
-            className="m-ChartWrapper"
-          ></div>
+            className="inner"
+            style={{
+              width: `${600}px`,
+              height: `${400}px`,
+            }}
+          >
+            <div
+              id="c1"
+              className="m-ChartWrapper"
+            ></div>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Coat;
