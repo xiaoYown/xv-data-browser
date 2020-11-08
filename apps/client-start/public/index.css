@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  border-width: 0;
+  margin: 0;
+}
+::selection {
+  background-color: transparent;
+}
+
+html {
+  font-size: 12px;
+  background-color: #1e1e1e;
+  cursor: default;
+}
+.container {
+  padding: 30px;
+}
+.wrap-50 {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+.content-box {
+  box-sizing: border-box;
+  height: 200px;
+  padding: 8px;
+  border: 2px solid #181818;
+}
+
+.box-title {
+  height: 30px;
+  padding-bottom: 8px;
+  line-height: 30px;
+  font-size: 22px;
+  color: #cccccc;
+}
+.file-item {
+  height: 20px;
+  line-height: 20px;
+}
+.file-item-title {
+  color: #3794ff;
+  cursor: pointer;
+}
+.file-item-path {
+  color: #989898;
+}
