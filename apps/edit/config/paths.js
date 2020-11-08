@@ -9,6 +9,7 @@ const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 const { name, passid } = require('../project.config.json');
+const isElectron = process.env.RUN_ENV === 'electron';
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
 // "public path" at which the app is served.
@@ -66,7 +67,7 @@ module.exports = {
   testsSetup: resolveModule(resolveApp, 'src/setupTests'),
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
-  publicUrlOrPath: `${passid ? '/' + passid : ''}/${name}/`,
+  publicUrlOrPath: isElectron ? './' : `${passid ? '/' + passid : ''}/${name}/`,
 };
 
 

@@ -1,0 +1,17 @@
+{
+  "id": "2",
+  "name": "报表-1",
+  "step": 0,
+  "props": {
+    "colors": {
+    },
+    "colorsCustom": {
+    },
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "backgroundColor": "#FFFFFF"
+    }
+  },
+  "materials": ["1"]
+}

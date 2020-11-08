@@ -5,7 +5,9 @@ const path = require('path');
 const paths = require('./paths');
 const { passid, name } = require('../project.config.json');
 
-const BASE_URL = (passid ? '/' + 'passid' : '') + '/' + name;
+const isElectron = process.env.RUN_ENV === 'electron';
+
+const BASE_URL = isElectron ? './' : (passid ? '/' + 'passid' : '') + '/' + name;
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
 
@@ -87,6 +89,7 @@ function getClientEnvironment(publicUrl) {
         WDS_SOCKET_HOST: process.env.WDS_SOCKET_HOST,
         WDS_SOCKET_PATH: process.env.WDS_SOCKET_PATH,
         WDS_SOCKET_PORT: process.env.WDS_SOCKET_PORT,
+        RUN_ENV: process.env.RUN_ENV,
         BASE_URL,
       }
     );

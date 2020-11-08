@@ -1,0 +1,17 @@
+{
+  "name": "报表集-1",
+  "desc": "",
+  "author": "user_id",
+  "version": "0.0.1",
+  "create_time": "Sat Nov 07 2020 12:47:48 GMT+0800",
+  "update_time": "Sat Nov 07 2020 13:47:48 GMT+0800",
+  "cover": "",
+  "portions": [
+    {
+      "id": "1",
+      "name": "报表-1",
+      "create_time": "Sat Nov 07 2020 13:47:48 GMT+0800",
+      "update_time": "Sat Nov 07 2020 14:47:48 GMT+0800"
+    }
+  ]
+}
